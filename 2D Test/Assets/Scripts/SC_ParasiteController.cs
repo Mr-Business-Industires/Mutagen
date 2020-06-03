@@ -19,18 +19,15 @@ public class SC_ParasiteController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if (Input.GetMouseButtonDown(1))
-            {
-            if (CanJump)
-            {
-                gameObject.layer = LayerMask.NameToLayer("Default");
-                Destroy(son);
-                attached = false;
-
-                FirePlayer();
-            }
-            }
-
+        if (Input.GetMouseButtonDown(1) && CanJump)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Default");
+            Destroy(son);
+            attached = false;
+            FirePlayer();
+        }
+        if(!CanJump && rb.velocity == new Vector2(0, 0)) //Death when the character stops moving
+                GameOver();
         if (Input.GetKeyDown(KeyCode.R))
         {
             CanJump = true;
@@ -55,7 +52,7 @@ public class SC_ParasiteController : MonoBehaviour
         }
     }
 
-    public void GameOver ()
+    public void GameOver ()//Game Over Function
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
