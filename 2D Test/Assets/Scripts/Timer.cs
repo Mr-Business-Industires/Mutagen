@@ -5,7 +5,6 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public int timeUntilDeath = 5;
-    bool controlled = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +19,8 @@ public class Timer : MonoBehaviour
 
     public IEnumerator CountDown(GameObject parasite)
     {
+        this.GetComponent<Sc_CharacterMovement>().enabled = true;
+        this.GetComponent<Sc_CharacterMovement>().SendMessage("StartControl", parasite);
         Debug.Log("Started Enemy Destruction At: " + Time.time);
         yield return new WaitForSeconds(timeUntilDeath);
         parasite.SendMessage("GameOver");

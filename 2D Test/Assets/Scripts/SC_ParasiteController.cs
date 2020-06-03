@@ -9,11 +9,13 @@ public class SC_ParasiteController : MonoBehaviour
     bool CanJump;
     bool attached;
     public Rigidbody2D rb;
-    public GameObject son;
+    public GameObject son = null;
     // Start is called before the first frame update
     void Start()
     {
+
         CanJump = true;
+
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class SC_ParasiteController : MonoBehaviour
         }
         if (attached)
         {
-            son.transform.position = transform.position;
+            //son.transform.position = transform.position; MOVED TO THE ENEMY
         }
     }
 
@@ -43,11 +45,13 @@ public class SC_ParasiteController : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            CanJump = true;
-            son = other.gameObject;   
+            son = other.gameObject;
+            transform.position = son.transform.position;
             attached = true;
+            rb.velocity = new Vector2(0, 0);
             other.gameObject.SendMessage("CountDown", this.gameObject);
             gameObject.layer = LayerMask.NameToLayer("Merged");
+            CanJump = true;
 
         }
     }
@@ -57,9 +61,22 @@ public class SC_ParasiteController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
-    /*void toggleColliders()
+    /*void ToggleColliders()
     {
-        if
+        for(int i = 0; i<colliders.Length; i++)
+        {
+            colliders[i].enabled = !colliders[i].enabled;
+        }
+        if ((son != null))
+        {
+            colliders[0].enabled = true;
+            colliders[1].enabled = true;
+            colliders = this.gameObject.GetComponents<Collider2D>();
+            Collider2D[] colliders;
+            Debug.Log("ToggledColliders");
+            ToggleColliders();
+        }
+        ToggleColliders();
     }*/
 
 
