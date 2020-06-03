@@ -6,6 +6,9 @@ public class Sc_CharacterMovement : MonoBehaviour
 {
     Rigidbody2D body;
 
+    public bool controlled = false;
+    GameObject parasiteRef;
+
     float horizontal;
     float vertical;
     float moveLimiter = 0.7f;
@@ -21,22 +24,34 @@ public class Sc_CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        if (controlled)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+            parasiteRef.transform.position = transform.position;
+        }
 
     }
 
     private void FixedUpdate()
     {
-        if (horizontal != 0 && vertical != 0) // Check for diagonal movement
+        if (controlled)
         {
-            // limit movement speed diagonally, so you move at 70% speed
-            horizontal *= moveLimiter;
-            vertical *= moveLimiter;
+            if (horizontal != 0 && vertical != 0) // Check for diagonal movement
+            {
+                // limit movement speed diagonally, so you move at 70% speed
+                horizontal *= moveLimiter;
+                vertical *= moveLimiter;
+            }
+            body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
         }
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-     
     }
 
+
+    public void StartControl (GameObject parasite)
+    {
+        controlled = true;
+        parasiteRef = parasite;
+    }
 
 }
