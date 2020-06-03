@@ -15,17 +15,14 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(controlled)
-        {
-            CountDown();
-            controlled = false;
-        }
+
     }
-    IEnumerator CountDown()
+
+    public IEnumerator CountDown(GameObject parasite)
     {
         Debug.Log("Started Enemy Destruction At: " + Time.time);
         yield return new WaitForSeconds(timeUntilDeath);
-        //SEND A COMMAND FOR THE MAIN CHARACTER TO DIE
+        parasite.SendMessage("GameOver");
         Destroy(this);
     }
 }

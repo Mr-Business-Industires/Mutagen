@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class SC_ParasiteController : MonoBehaviour
@@ -20,7 +21,7 @@ public class SC_ParasiteController : MonoBehaviour
     {
             if (Input.GetMouseButtonDown(1))
             {
-            if (CanJump == true)
+            if (CanJump)
             {
                 gameObject.layer = LayerMask.NameToLayer("Default");
                 Destroy(son);
@@ -48,9 +49,15 @@ public class SC_ParasiteController : MonoBehaviour
             CanJump = true;
             son = other.gameObject;   
             attached = true;
+            other.gameObject.SendMessage("CountDown", this.gameObject);
             gameObject.layer = LayerMask.NameToLayer("Merged");
 
         }
+    }
+
+    public void GameOver ()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
     /*void toggleColliders()
