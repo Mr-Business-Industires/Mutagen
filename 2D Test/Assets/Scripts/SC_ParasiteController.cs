@@ -43,7 +43,7 @@ public class SC_ParasiteController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Scientist" || other.gameObject.tag == "Gaurd" || other.gameObject.tag == "Other")
         {
             son = other.gameObject;
             transform.position = son.transform.position;
