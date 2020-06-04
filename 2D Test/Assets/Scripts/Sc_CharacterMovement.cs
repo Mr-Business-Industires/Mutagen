@@ -14,7 +14,7 @@ public class Sc_CharacterMovement : MonoBehaviour
     float moveLimiter = 0.7f;
     float runSpeed = 7.0f;
     public float scientistSpeed = 30.0f;
-    public float gaurdSpeed = 30.0f;
+    public float guardSpeed = 30.0f;
     public float otherSpeed = 30.0f;
 
     void Start()
@@ -47,7 +47,7 @@ public class Sc_CharacterMovement : MonoBehaviour
             }
             else if (gameObject.tag == "Gaurd")
             {
-                runSpeed = gaurdSpeed;
+                runSpeed = guardSpeed;
             }
             else if (gameObject.tag == "Other")
             {
