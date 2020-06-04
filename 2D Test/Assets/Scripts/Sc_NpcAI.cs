@@ -9,6 +9,7 @@ public class Sc_NpcAI : MonoBehaviour
     public float otherSpeed = 20f;
     public float guardHaltDistance = 6f;
     public float guardFleeDistance = 5f;
+    public float shootDistance = 40f;
     public float scientisitHaltDistance = 100f;
     public float scientisitFleeDistance = 10f;
     public float otherHaltDistance = 3f;
@@ -73,7 +74,7 @@ public class Sc_NpcAI : MonoBehaviour
 
 
 
-        if (timeBtwShots <= 0)
+        if (timeBtwShots <= 0 && gameObject.tag == "Gaurd" && Vector2.Distance(transform.position, player.position) < shootDistance)
         {
             Instantiate(projectile, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
