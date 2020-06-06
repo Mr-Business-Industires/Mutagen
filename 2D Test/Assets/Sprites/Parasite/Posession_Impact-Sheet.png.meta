@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 56fa97ac2009303419d64529535d98a6
+guid: 7f925c41a03b4cd41af2b88b851bcfe7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Walk_Sci_0
-    21300002: Walk_Sci_1
-    21300004: Walk_Sci_2
-    21300006: Walk_Sci_3
-    21300008: Walk_Sci_4
-    21300010: Walk_Sci_5
+    21300000: Posession_Impact-Sheet_0
+    21300002: Posession_Impact-Sheet_1
+    21300004: Posession_Impact-Sheet_2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,7 +87,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_Sci_0
+      name: Posession_Impact-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -104,13 +101,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 384f8f08cd4ed4c4eac2658ad511f748
+      spriteID: 369a5012077a3e74bbf799d48a700f6b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Sci_1
+      name: Posession_Impact-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -124,13 +121,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a7c4d81e6ef27b418b882ce2bf8170e
+      spriteID: cdbe8a45fab4b15458cfd3387e476e89
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Sci_2
+      name: Posession_Impact-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -144,67 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86ade5ab2786211409cc23d17b8e33e9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_Sci_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b64f4a7c4c8776946aec417ade7bb4f2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_Sci_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4103f7ecce6849340873d498161ee385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_Sci_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6210038f788a40e44982c6d11f902d48
+      spriteID: b1641f9d2184fd248997c2041ada662a
       vertices: []
       indices: 
       edges: []
@@ -212,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d3511616643c34047b37ba75eaa88608
+    spriteID: 4489d5e73c0638b46a8d2a043583c5c9
     vertices: []
     indices: 
     edges: []

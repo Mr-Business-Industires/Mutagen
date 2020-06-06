@@ -8,6 +8,7 @@ TagManager:
   - Scientist
   - Gaurd
   - Other
+  - Walls
   layers:
   - Default
   - TransparentFX

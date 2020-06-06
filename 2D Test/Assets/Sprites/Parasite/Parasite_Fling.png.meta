@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 56fa97ac2009303419d64529535d98a6
+guid: 81d2b5d79f608b04588e8452fcde193d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Walk_Sci_0
-    21300002: Walk_Sci_1
-    21300004: Walk_Sci_2
-    21300006: Walk_Sci_3
-    21300008: Walk_Sci_4
-    21300010: Walk_Sci_5
+    21300000: Parasite_Fling_0
+    21300002: Parasite_Fling_1
+    21300004: Parasite_Fling_2
+    21300006: Parasite_Fling_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,7 +88,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_Sci_0
+      name: Parasite_Fling_0
       rect:
         serializedVersion: 2
         x: 0
@@ -104,13 +102,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 384f8f08cd4ed4c4eac2658ad511f748
+      spriteID: af523acb3f8043e44846e49d8e90fcef
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Sci_1
+      name: Parasite_Fling_1
       rect:
         serializedVersion: 2
         x: 64
@@ -124,13 +122,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a7c4d81e6ef27b418b882ce2bf8170e
+      spriteID: b9b6548480192d2418842d7539ee28c1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Sci_2
+      name: Parasite_Fling_2
       rect:
         serializedVersion: 2
         x: 128
@@ -144,13 +142,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86ade5ab2786211409cc23d17b8e33e9
+      spriteID: bd1582b15356d0e46ab892c032b33d00
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Sci_3
+      name: Parasite_Fling_3
       rect:
         serializedVersion: 2
         x: 192
@@ -164,47 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b64f4a7c4c8776946aec417ade7bb4f2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_Sci_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4103f7ecce6849340873d498161ee385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_Sci_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6210038f788a40e44982c6d11f902d48
+      spriteID: 1e04c13f51c593043a45d4e0ba77f2f0
       vertices: []
       indices: 
       edges: []
@@ -212,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d3511616643c34047b37ba75eaa88608
+    spriteID: 04281f6c2a54cf14384e71e8787b006c
     vertices: []
     indices: 
     edges: []
