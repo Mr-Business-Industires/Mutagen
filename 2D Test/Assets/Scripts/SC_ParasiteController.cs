@@ -65,7 +65,7 @@ public class SC_ParasiteController : MonoBehaviour
         }
     }
 
-    public void GameOver ()//Game Over Function
+    public void GameOver()//Game Over Function
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
