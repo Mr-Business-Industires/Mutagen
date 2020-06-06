@@ -9,11 +9,15 @@ public class SC_ParasiteController : MonoBehaviour
     bool CanJump;
     bool attached;
     public Rigidbody2D rb;
+
+    public GameObject timer;
+    public bool timerStarted;
+
     public GameObject son = null;
     // Start is called before the first frame update
     void Start()
     {
-
+        timer = GameObject.Find("Time");
         CanJump = true;
 
     }
@@ -26,6 +30,11 @@ public class SC_ParasiteController : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Default");
             Destroy(son);
             attached = false;
+            if(!timerStarted)
+            {
+                timerStarted = true;
+                timer.SendMessage("TimerStart");
+            }
             FirePlayer();
         }
         if(!CanJump && rb.velocity == new Vector2(0, 0)) //Death when the character stops moving
@@ -88,5 +97,5 @@ public class SC_ParasiteController : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         Debug.Log(mousePosition);
         rb.velocity = ((mousePosition - playerPosition) * 10);
-            }
+        }
     }

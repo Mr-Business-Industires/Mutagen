@@ -67,7 +67,11 @@ public class Sc_CharacterMovement : MonoBehaviour
 
     public void StartControl (GameObject parasite)
     {
-        controlled = true;
+        if(!controlled)
+        {
+            controlled = true;
+            GameObject.Find("Score").SendMessage("AddOne");
+        }
         parasiteRef = parasite;
     }
 
