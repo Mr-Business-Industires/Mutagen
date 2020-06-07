@@ -59,7 +59,11 @@ public class SC_ParasiteController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Scientist" || other.gameObject.tag == "Gaurd" || other.gameObject.tag == "Other")
+        if (other.gameObject.tag == "LevelEnd")
+        {
+            other.gameObject.SendMessage("NextLevel");
+        }
+        else if (other.gameObject.tag == "Scientist" || other.gameObject.tag == "Gaurd" || other.gameObject.tag == "Other")
         {
             animator.SetTrigger("Possess");
             son = other.gameObject;
@@ -71,6 +75,7 @@ public class SC_ParasiteController : MonoBehaviour
             CanJump = true;
 
         }
+
     }
 
     void OnColliderEnter2D(Collider2D other)

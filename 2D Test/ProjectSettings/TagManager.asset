@@ -9,6 +9,7 @@ TagManager:
   - Gaurd
   - Other
   - Walls
+  - LevelEnd
   layers:
   - Default
   - TransparentFX
