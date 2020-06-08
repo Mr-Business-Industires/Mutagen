@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlled: 0
+  animController: {fileID: 7601397291186531823}
   scientistSpeed: 5
   guardSpeed: 10
   otherSpeed: 30

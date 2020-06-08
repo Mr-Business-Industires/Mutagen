@@ -7,6 +7,7 @@ public class Sc_CharacterMovement : MonoBehaviour
     Rigidbody2D body;
     //public enum CharacterClass { Scientist, Gaurd, Other};
     public bool controlled = false;
+    public Animator animController;
     GameObject parasiteRef;
 
     float horizontal;
@@ -35,6 +36,16 @@ public class Sc_CharacterMovement : MonoBehaviour
             parasiteRef.transform.position = transform.position;
         }
 
+        if (horizontal != 0 || vertical != 0)
+        {
+            animController.SetBool("IsMoving", true);
+        }
+
+        else if (horizontal == 0 && vertical == 0)
+        {
+            animController.SetBool("IsMoving", false);
+        }
+
     }
 
     private void FixedUpdate()
@@ -61,6 +72,12 @@ public class Sc_CharacterMovement : MonoBehaviour
                 vertical *= moveLimiter;
             }
             body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+
+            float angle = Mathf.Atan2(-horizontal, vertical) * Mathf.Rad2Deg;
+
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 10 * Time.deltaTime);
         }
     }
 
