@@ -21,6 +21,7 @@ public class Sc_LevelEnd : MonoBehaviour
 
     public void NextLevel()
     {
+        Time.timeScale = 0;
         levelEndUi.SetActive(true);
         
     }

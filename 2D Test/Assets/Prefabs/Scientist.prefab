@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2316698437147580310}
   - component: {fileID: 3210415880944023167}
   - component: {fileID: 3210415880717478814}
+  - component: {fileID: 1826309796491623239}
   m_Layer: 9
   m_Name: Scientist
   m_TagString: Scientist
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 3053691299183704342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.561, y: 24.85, z: 0.014}
-  m_LocalScale: {x: 0.40681726, y: 0.38760883, z: 0.28669292}
+  m_LocalScale: {x: 0.13959141, y: 0.1330004, z: 0.09837308}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -199,11 +200,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620192f9e511038488d7177895b22fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guardSpeed: 15
-  scientistSpeed: 7.5
+  seeing: 0
+  guardSpeed: 10
+  scientistSpeed: 6
   otherSpeed: 20
-  guardHaltDistance: 6
-  guardFleeDistance: 5
+  guardHaltDistance: 5
+  guardFleeDistance: 3
   shootDistance: 40
   scientisitHaltDistance: 200
   scientisitFleeDistance: 30
@@ -211,3 +213,27 @@ MonoBehaviour:
   otherFleeDistance: 1
   startTimeBtwShots: 0
   projectile: {fileID: 0}
+  agent: {fileID: 0}
+  pointList: {fileID: 0}
+--- !u!195 &1826309796491623239
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3053691299183704342}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 5.12
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 10.239999
+  m_BaseOffset: 5.1199994
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

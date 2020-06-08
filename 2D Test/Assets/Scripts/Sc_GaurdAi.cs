@@ -19,8 +19,8 @@ public class Sc_GaurdAi : MonoBehaviour
         void Start()
         {
 
-        timeBtwShots = startTimeBtwShots;
-           player  = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            timeBtwShots = startTimeBtwShots;
+            player  = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         }
 
         void Update()
@@ -40,7 +40,7 @@ public class Sc_GaurdAi : MonoBehaviour
 
 
 
-             if(timeBtwShots <= 0)
+        if(timeBtwShots <= 0)
         {
             Instantiate(projectile, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;

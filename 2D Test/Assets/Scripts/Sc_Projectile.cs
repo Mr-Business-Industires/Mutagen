@@ -36,4 +36,12 @@ public class Sc_Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.SendMessage("GameOver");
+        }
+    }
 }
