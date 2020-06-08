@@ -30,7 +30,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Walls
   - 
   - 
   - 
@@ -44,6 +44,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Enemy
+    uniqueID: 1072365431
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Walls
+    uniqueID: 3280796683
     locked: 0
