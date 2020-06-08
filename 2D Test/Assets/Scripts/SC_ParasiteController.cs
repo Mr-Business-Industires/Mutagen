@@ -26,19 +26,20 @@ public class SC_ParasiteController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && CanJump)
+        if (Input.GetMouseButtonDown(0) && !timerStarted)
+        {
+            timerStarted = true;
+            timer.SendMessage("TimerStart");
+            FirePlayer();
+        }
+        else if (Input.GetMouseButtonDown(0) && CanJump && Time.timeScale != 0)
         {
             gameObject.layer = LayerMask.NameToLayer("Default");
             Destroy(son);
             attached = false;
-            if (!timerStarted)
-            {
-                timerStarted = true;
-                timer.SendMessage("TimerStart");
-            }
             FirePlayer();
         }
-        if (!CanJump && rb.velocity == new Vector2(0, 0)) //Death when the character stops moving
+        else if (!CanJump && rb.velocity == new Vector2(0, 0) && Time.timeScale != 0) //Death when the character stops moving
         { 
             animator.SetTrigger("Death");
             if (animator.GetCurrentAnimatorStateInfo(0).length > animator.GetCurrentAnimatorStateInfo(0).normalizedTime) { GameOver(); }
