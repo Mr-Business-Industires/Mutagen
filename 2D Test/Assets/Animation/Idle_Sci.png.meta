@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-guid: 56fa97ac2009303419d64529535d98a6
+guid: b6ab45c4807b7d4448dbaab9aa6c27d2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Walk_Sci_0
-    21300002: Walk_Sci_1
-    21300004: Walk_Sci_2
-    21300006: Walk_Sci_3
-    21300008: Walk_Sci_4
-    21300010: Walk_Sci_5
+    21300000: Idle_Sci_0
+    21300002: Idle_Sci_1
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,7 +86,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_Sci_0
+      name: Idle_Sci_0
       rect:
         serializedVersion: 2
         x: 0
@@ -98,19 +94,19 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 005dcc0c41990d845808f82c87428690
+      spriteID: be9a3cccda738754fad538035920a42e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Sci_1
+      name: Idle_Sci_1
       rect:
         serializedVersion: 2
         x: 64
@@ -118,93 +114,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54f816e5b0e4a7a41958edf23fc9c468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_Sci_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9290db007eadc2147980ee8c315bc28f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_Sci_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 483586c7aabbfd94cb182c341250fb9f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_Sci_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 092ea6f30188a8b4fbafc1903c3e0159
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_Sci_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c20445a6d89eeea4b80cf2bc4d9285fa
+      spriteID: d16e01711cf863c41beedbb366ef19fa
       vertices: []
       indices: 
       edges: []
@@ -212,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 93aed3d001399a64eb4eaacbf467a7a3
+    spriteID: e251b0c5e874e0241871098d67e68507
     vertices: []
     indices: 
     edges: []
