@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Sc_NpcAI : MonoBehaviour
 {
@@ -24,11 +25,11 @@ public class Sc_NpcAI : MonoBehaviour
 
     public GameObject projectile;
 
-
+    public NavMeshAgent agent;
 
     void Start()
     {
-
+        agent = this.gameObject.GetComponent<NavMeshAgent>();
         timeBtwShots = startTimeBtwShots;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }

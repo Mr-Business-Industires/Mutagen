@@ -15,10 +15,10 @@ GameObject:
   - component: {fileID: 4172329750939085817}
   - component: {fileID: 4172329750939085814}
   - component: {fileID: 1071457410654170628}
-  - component: {fileID: 81878337329322916}
+  - component: {fileID: 1318682840}
   m_Layer: 0
   m_Name: Parasite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4172329750939085816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.55549, y: -1.114, z: 0.19140625}
-  m_LocalScale: {x: 0.12315357, y: 0.12315357, z: 0.12315357}
+  m_LocalScale: {x: 1.13643, y: 1.13643, z: 1.13643}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a1085decadd2237429a374ab61349898, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81d2b5d79f608b04588e8452fcde193d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,8 +97,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
-  m_LinearDrag: 7
+  m_Mass: 5
+  m_LinearDrag: 10
   m_AngularDrag: 3
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -118,8 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963f205add006e048a5c1a0e17231447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.1
   rb: {fileID: 4172329750939085819}
+  animator: {fileID: 1318682840}
+  timer: {fileID: 0}
+  timerStarted: 0
   son: {fileID: 0}
 --- !u!58 &4172329750939085817
 CircleCollider2D:
@@ -136,7 +139,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 0.19
 --- !u!58 &4172329750939085814
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -152,7 +155,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 0.54
 --- !u!82 &1071457410654170628
 AudioSource:
   m_ObjectHideFlags: 0
@@ -249,11 +252,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &81878337329322916
-AudioListener:
+--- !u!95 &1318682840
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4172329750939085816}
   m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6e2649a018ab434baf1daa92cdebd81, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
