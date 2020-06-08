@@ -18,6 +18,8 @@ public class Sc_NpcAI : MonoBehaviour
     public float otherFleeDistance = 1f;
     private Transform player;
 
+    public float visionDistance;
+
     private float speed;
     private float fleeDistance; 
     private float haltDistance;
@@ -69,7 +71,7 @@ public class Sc_NpcAI : MonoBehaviour
         this.transform.rotation = Quaternion.Euler(0, 0, 0);
         Vector2 directionToPlayer = player.position - transform.position;
         //seeing = ObjectInSight("Player", directionToPlayer);
-        if (!charMovRef.controlled)
+        if (!charMovRef.controlled && Vector2.Distance(transform.position, player.position) < visionDistance)
         {
             if (Vector2.Distance(transform.position, player.position) > haltDistance)
             {
@@ -86,7 +88,7 @@ public class Sc_NpcAI : MonoBehaviour
             {
                 Vector3 chosenPoint = pointList.transform.GetChild(1).position;
                 float choosePoint = 0;
-                for (int i = 0; i > pointList.transform.childCount; i++)
+                for (int i = 0; i <= pointList.transform.childCount; i++)
                 {
                     choosePoint = (pointList.transform.GetChild(i).position.x - transform.position.x) + (pointList.transform.GetChild(i).position.y - transform.position.y);
                     if (choosePoint <= ((chosenPoint.x - transform.position.x) + (chosenPoint.y - transform.position.y)))
