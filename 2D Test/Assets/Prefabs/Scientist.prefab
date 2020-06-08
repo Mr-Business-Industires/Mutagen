@@ -184,8 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlled: 0
-  scientistSpeed: 10
-  guardSpeed: 30
+  scientistSpeed: 5
+  guardSpeed: 10
   otherSpeed: 30
 --- !u!114 &3210415880717478814
 MonoBehaviour:
