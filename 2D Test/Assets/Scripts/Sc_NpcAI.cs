@@ -71,33 +71,37 @@ public class Sc_NpcAI : MonoBehaviour
     {
         this.transform.rotation = Quaternion.Euler(0, 0, 0);
         Vector2 directionToPlayer = player.position - transform.position;
-        //seeing = ObjectInSight("Player", directionToPlayer);
-        if (Vector2.Distance(transform.position, player.position) < visionDistance)
+        seeing = ObjectInSight("Player", directionToPlayer);
+
+            if (Vector2.Distance(transform.position, player.position) > haltDistance && Vector2.Distance(transform.position, player.position) < visionDistance)
         {
-            if (Vector2.Distance(transform.position, player.position) > haltDistance)
-            {
-                agent.destination = player.position;
+            agent.isStopped = false;
+            agent.destination = player.position;
                 this.transform.rotation = Quaternion.Euler(0, 0, 0);
                 //transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             }
-            else if (Vector2.Distance(transform.position, player.position) < haltDistance && Vector2.Distance(transform.position, player.position) > fleeDistance)
+             else if (Vector2.Distance(transform.position, player.position) > haltDistance)
             {
                 agent.isStopped = true;
+            Debug.Log("STOPPINGGGG"+ Vector2.Distance(transform.position, player.position));
                 //transform.position = this.transform.position;
             }
-            else if (Vector2.Distance(transform.position, player.position) < fleeDistance)
+            else if (Vector2.Distance(transform.position, player.position) < fleeDistance && Vector2.Distance(transform.position, player.position) < visionDistance)
             {
+                agent.isStopped = false;
                 Vector3 chosenPoint = pointList.transform.GetChild(1).position;
-                float choosePoint = 0;
-                for (int i = 0; i < pointList.transform.childCount; i++)
+            for (int i = 0; i < pointList.transform.childCount; i++)
+            {
+                if (Vector3.Distance(pointList.transform.GetChild(i).position, transform.position) < Vector3.Distance(chosenPoint, transform.position))
                 {
-                    choosePoint = (pointList.transform.GetChild(i).position.x - transform.position.x) + (pointList.transform.GetChild(i).position.y - transform.position.y);
-                    if (choosePoint <= ((chosenPoint.x - transform.position.x) + (chosenPoint.y - transform.position.y)))
-                    {
-                        chosenPoint = pointList.transform.GetChild(i).position;
-                    }
+                    chosenPoint = pointList.transform.GetChild(i).position;
                 }
-                Debug.Log("Chose Point" + chosenPoint);
+            }
+                if(chosenPoint == new Vector3(0,0,0))
+                {
+                chosenPoint = pointList.transform.GetChild(Random.Range(0, pointList.transform.childCount)).position;
+                Debug.Log("HAD TO RANDOMIZE A POINT");
+            }
                 agent.destination = chosenPoint;
 
 
@@ -117,7 +121,6 @@ public class Sc_NpcAI : MonoBehaviour
             {
                 timeBtwShots -= Time.deltaTime;
             }
-        }
     }
 
 
@@ -129,7 +132,10 @@ public class Sc_NpcAI : MonoBehaviour
         enemyRayInfo = Physics2D.Raycast(transform.position, direction, 20f);
 
         if (enemyRayInfo.collider.tag == tag)
+        {
             inSight = true;
+            Debug.Log("I SEE DEAD PEPOLE");
+        }
 
         return inSight;
     }
