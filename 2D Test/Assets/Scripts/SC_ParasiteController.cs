@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class SC_ParasiteController : MonoBehaviour
 {
-    public int speed;
+    public float speed;
     bool CanJump;
     bool attached;
     public Rigidbody2D rb;
+    public Animator animator;
+    public GameObject timer;
+    public bool timerStarted;
+
+
     public GameObject son = null;
     // Start is called before the first frame update
     void Start()
     {
-
+        timer = GameObject.Find("Time");
         CanJump = true;
 
     }
@@ -21,21 +26,33 @@ public class SC_ParasiteController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && CanJump)
+        if (Input.GetMouseButtonDown(0) && !timerStarted)
+        {
+            timerStarted = true;
+            timer.SendMessage("TimerStart");
+            FirePlayer();
+        }
+        else if (Input.GetMouseButtonDown(0) && CanJump && Time.timeScale != 0)
         {
             gameObject.layer = LayerMask.NameToLayer("Default");
             Destroy(son);
             attached = false;
             FirePlayer();
         }
-        if(!CanJump && rb.velocity == new Vector2(0, 0)) //Death when the character stops moving
-                GameOver();
+        else if (!CanJump && rb.velocity == new Vector2(0, 0) && Time.timeScale != 0) //Death when the character stops moving
+        { 
+            animator.SetTrigger("Death");
+            if (animator.GetCurrentAnimatorStateInfo(0).length > animator.GetCurrentAnimatorStateInfo(0).normalizedTime) { GameOver(); }
+
+        }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             CanJump = true;
         }
         if (attached)
         {
+            transform.up = son.transform.up;
             //son.transform.position = transform.position; MOVED TO THE ENEMY
         }
     }
@@ -43,8 +60,13 @@ public class SC_ParasiteController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "LevelEnd")
         {
+            other.gameObject.SendMessage("NextLevel");
+        }
+        else if (other.gameObject.tag == "Scientist" || other.gameObject.tag == "Gaurd" || other.gameObject.tag == "Other")
+        {
+            animator.SetTrigger("Possess");
             son = other.gameObject;
             transform.position = son.transform.position;
             attached = true;
@@ -54,6 +76,12 @@ public class SC_ParasiteController : MonoBehaviour
             CanJump = true;
 
         }
+
+    }
+
+    void OnColliderEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Walls") { animator.SetTrigger("Impact"); }
     }
 
     public void GameOver ()//Game Over Function
@@ -79,14 +107,15 @@ public class SC_ParasiteController : MonoBehaviour
         ToggleColliders();
     }*/
 
-
     void FirePlayer()
         {
+        animator.SetTrigger("Fling");
         CanJump = false;
         Vector2 mousePosition = Input.mousePosition;
         Vector2 playerPosition = new Vector2(transform.position.x, transform.position.y);
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        transform.up = mousePosition - playerPosition;
         Debug.Log(mousePosition);
-        rb.velocity = ((mousePosition - playerPosition) * 10);
-            }
+        rb.velocity = ((mousePosition - playerPosition) * speed);
+        }
     }

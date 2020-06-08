@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Scientist
+  - Gaurd
+  - Other
+  - Walls
+  - LevelEnd
   layers:
   - Default
   - TransparentFX
