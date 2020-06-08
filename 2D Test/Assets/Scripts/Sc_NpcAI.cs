@@ -38,32 +38,33 @@ public class Sc_NpcAI : MonoBehaviour
     {
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         timeBtwShots = startTimeBtwShots;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         charMovRef = gameObject.GetComponent<Sc_CharacterMovement>();
+
+        if (gameObject.tag == "Scientist")
+        {
+            speed = scientistSpeed;
+            fleeDistance = scientisitFleeDistance;
+            haltDistance = scientisitHaltDistance;
+        }
+        else if (gameObject.tag == "Gaurd")
+        {
+            speed = guardSpeed;
+            fleeDistance = guardFleeDistance;
+            haltDistance = guardHaltDistance;
+        }
+        else if (gameObject.tag == "Other")
+        {
+            speed = otherSpeed;
+            fleeDistance = otherFleeDistance;
+            haltDistance = otherHaltDistance;
+        }
     }
 
     private void FixedUpdate()
     {
-        
-        
-            if (gameObject.tag == "Scientist")
-            {
-                speed = scientistSpeed;
-                fleeDistance = scientisitFleeDistance;
-                haltDistance = scientisitHaltDistance;
-            }
-            else if (gameObject.tag == "Gaurd")
-            {
-                speed = guardSpeed;
-                fleeDistance = guardFleeDistance;
-                haltDistance = guardHaltDistance;
-            }
-            else if (gameObject.tag == "Other")
-            {
-                speed = otherSpeed;
-                fleeDistance = otherFleeDistance;
-                haltDistance = otherHaltDistance;
-            }
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+      
         
     }
     void Update()
@@ -71,7 +72,7 @@ public class Sc_NpcAI : MonoBehaviour
         this.transform.rotation = Quaternion.Euler(0, 0, 0);
         Vector2 directionToPlayer = player.position - transform.position;
         //seeing = ObjectInSight("Player", directionToPlayer);
-        if (!charMovRef.controlled && Vector2.Distance(transform.position, player.position) < visionDistance)
+        if (Vector2.Distance(transform.position, player.position) < visionDistance)
         {
             if (Vector2.Distance(transform.position, player.position) > haltDistance)
             {
@@ -117,19 +118,13 @@ public class Sc_NpcAI : MonoBehaviour
                 timeBtwShots -= Time.deltaTime;
             }
         }
-        else if(charMovRef.controlled)
-        {
-            agent.isStopped = true;
-        }
     }
 
 
     public bool ObjectInSight(string tag, Vector3 direction)
     {
         bool inSight = false;
-
-        Ray2D enemyRay = new Ray2D(transform.position, direction);
-
+        
         RaycastHit2D enemyRayInfo;
         enemyRayInfo = Physics2D.Raycast(transform.position, direction, 20f);
 
