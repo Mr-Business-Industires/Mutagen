@@ -12,7 +12,7 @@ public class Sc_Projectile : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
+        CountDown();
         target = new Vector2(player.position.x, player.position.y);
     }
 
@@ -37,11 +37,22 @@ public class Sc_Projectile : MonoBehaviour
         }
     }
 
+    public IEnumerator CountDown()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(this);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
             collision.gameObject.SendMessage("GameOver");
+        }
+
+        else if(collision.gameObject.tag == "Walls")
+            {
+            Destroy(gameObject);
         }
     }
 }

@@ -25,8 +25,8 @@ public class DoorScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        rightAnimator.ResetTrigger("closeRight");
-        leftAnimator.ResetTrigger("closeLeft");
+        //rightAnimator.ResetTrigger("closeRight");
+        //leftAnimator.ResetTrigger("closeLeft");
         leftAnimator.SetTrigger("openLeft");
         rightAnimator.SetTrigger("openRight");
         doorRight.GetComponent<BoxCollider2D>().enabled = false;
@@ -35,8 +35,8 @@ public class DoorScript : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        rightAnimator.ResetTrigger("openRight");
-        leftAnimator.ResetTrigger("openLeft");
+       // rightAnimator.ResetTrigger("openRight");
+        //leftAnimator.ResetTrigger("openLeft");
         leftAnimator.SetTrigger("closeLeft");
         rightAnimator.SetTrigger("closeRight");
         doorRight.GetComponent<BoxCollider2D>().enabled = true;

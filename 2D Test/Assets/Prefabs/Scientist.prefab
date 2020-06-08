@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 2316698437147580310}
   - component: {fileID: 3210415880944023167}
   - component: {fileID: 3210415880717478814}
-  - component: {fileID: 1826309796491623239}
+  - component: {fileID: 6184201108152768052}
+  - component: {fileID: 7601397291186531823}
   m_Layer: 9
   m_Name: Scientist
   m_TagString: Scientist
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 3053691299183704342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.561, y: 24.85, z: 0.014}
-  m_LocalScale: {x: 0.13959141, y: 0.1330004, z: 0.09837308}
+  m_LocalScale: {x: 2.3804588, y: 2.3804588, z: 2.3804588}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,18 +52,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0025377274, y: -0.01290673}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 5}
+  m_Size: {x: 0.42403692, y: 0.29939604}
   m_EdgeRadius: 0
 --- !u!61 &3053691299183704347
 BoxCollider2D:
@@ -77,18 +78,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.031931162, y: 0}
+  m_Offset: {x: 0.0019935071, y: -0.009678237}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 10.24, y: 10.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.596554, y: 4}
+  m_Size: {x: 0.30480862, y: 0.18670242}
   m_EdgeRadius: 0
 --- !u!212 &3053691299183704340
 SpriteRenderer:
@@ -127,7 +128,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 448c1da8ce602f443a42554285702d3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6ab45c4807b7d4448dbaab9aa6c27d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -208,14 +209,15 @@ MonoBehaviour:
   guardFleeDistance: 3
   shootDistance: 40
   scientisitHaltDistance: 200
-  scientisitFleeDistance: 30
+  scientisitFleeDistance: 10
   otherHaltDistance: 3
   otherFleeDistance: 1
+  visionDistance: 20
   startTimeBtwShots: 0
   projectile: {fileID: 0}
   agent: {fileID: 0}
   pointList: {fileID: 0}
---- !u!195 &1826309796491623239
+--- !u!195 &6184201108152768052
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,7 +226,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3053691299183704342}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 5.12
+  m_Radius: 0.18
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -233,7 +235,26 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 10.239999
-  m_BaseOffset: 5.1199994
+  m_Height: 0.08
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &7601397291186531823
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3053691299183704342}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e338987790be1e443ae56c241538c830, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

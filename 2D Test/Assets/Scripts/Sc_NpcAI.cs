@@ -88,7 +88,7 @@ public class Sc_NpcAI : MonoBehaviour
             {
                 Vector3 chosenPoint = pointList.transform.GetChild(1).position;
                 float choosePoint = 0;
-                for (int i = 0; i <= pointList.transform.childCount; i++)
+                for (int i = 0; i < pointList.transform.childCount; i++)
                 {
                     choosePoint = (pointList.transform.GetChild(i).position.x - transform.position.x) + (pointList.transform.GetChild(i).position.y - transform.position.y);
                     if (choosePoint <= ((chosenPoint.x - transform.position.x) + (chosenPoint.y - transform.position.y)))
